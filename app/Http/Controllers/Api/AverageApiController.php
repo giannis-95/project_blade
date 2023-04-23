@@ -30,6 +30,7 @@ class AverageApiController{
     }
 
     public function delete($id){
+        $b = 4;
         $average = Average::find($id);
         $average->delete();
     }
