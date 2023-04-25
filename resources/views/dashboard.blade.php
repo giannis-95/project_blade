@@ -56,11 +56,15 @@
         </div>
   </div>
   <script>
-        let hello = function() {
-            return "Hello World!";
+        function Car(name,year){
+            this.name = name;
+            this.year = year;
         }
 
-        document.getElementById("demo").innerHTML = hello();
+      let car1 = new Car('ford',2014);
+      let car2 = new Car('Aromeo' ,2012);
+
+      document.getElementById("demo").innerHTML = car1.name + "" +car1.year + " " + car2.name + "" + car2.year;
     </script>
 
 </x-app-layout>

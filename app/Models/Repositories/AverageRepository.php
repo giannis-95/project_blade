@@ -4,6 +4,7 @@ namespace App\Models\Repositories;
 
 use App\Models\User;
 use App\Models\Average;
+use App\Models\Price;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -19,6 +20,12 @@ class AverageRepository{
         ]);
 
         $user->prices()->save($average);
+
+        $prices = collect([$data['prices']]);
+
+        Price::create([
+            'prices' => $prices->toJson()
+        ]);
     }
 
     public function update(array $data , $id){

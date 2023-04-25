@@ -36,7 +36,8 @@ class AverageController extends Controller
         $this->AverageRepository->insert($request->only([
             'firstValue' ,
             'secondValue' ,
-            'averageValue'
+            'averageValue' ,
+            'prices'
         ]));
 
         return redirect()->route('dashboard')->withSuccess(__('alerts.insertValues'));
