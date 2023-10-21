@@ -16,20 +16,24 @@ class UserSeeder extends Seeder
     {
         for($i=0; $i<50; $i++){
             User::create([
-                'name' => app(Faker::class)->name ,
+                'firstname' => app(Faker::class)->name ,
                 'email' => app(Faker::class)->email ,
                 'email_verified_at' => null ,
                 'password' => Hash::make(app(Faker::class)->text) ,
                 'remember_token' => null ,
+                'lastname' => app(Faker::class)->lastname ,
+                'phone' => rand(1000000000,9999999999) ,
             ]);
         }
 
         User::create([
-            'name' => 'john' ,
+            'firstname' => 'john' ,
             'email' => 'giannispappas95@gmail.com' ,
             'email_verified_at' => null ,
             'password' => Hash::make('ironmaiden') ,
             'remember_token' => null ,
+            'lastname' => 'pappas',
+            'phone' => rand(1000000000,9999999999) ,
         ]);
 
     }
