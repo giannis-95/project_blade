@@ -39,8 +39,9 @@ Route::get('/{id}/edit',                   [AverageController::class, 'edit'])->
 Route::put('/{id}/update',                 [AverageController::class, 'update'])->name('average.update');
 Route::delete('/{id}/delete',              [AverageController::class, 'delete'])->name('average.delete');
 
-//users
-Route::get('/',             [UserController::class, 'index'])->name('users.index');
+//contact
+Route::get('/contact',                   [UserController::class, 'create'])->name('contact.create');
+Route::post('/contact_insert',            [UserController::class, 'contact_insert'])->name('contact.contact_insert');
 
 
 require __DIR__.'/auth.php';

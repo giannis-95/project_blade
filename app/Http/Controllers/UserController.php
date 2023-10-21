@@ -7,8 +7,18 @@ use Illuminate\Http\Request;
 
 class UserController extends Controller
 {
-    public function index(){
-        $users = User::paginate(10);
-        return view('users.index' , compact('users'));
+    public function create(){
+        return view('contact.create');
+    }
+
+    public function contact_insert(Request $request){
+        $request->validate([
+            'email' => 'required|max:255' ,
+            'firstname' => 'required|max:255',
+            'lastname' => 'required|max:255',
+            'phone' => 'required|digits_between:10,14',
+        ]);
+
+        return redirect()->back()->withSuccess('validate completed');
     }
 }

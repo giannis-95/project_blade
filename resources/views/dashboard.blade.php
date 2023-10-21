@@ -10,11 +10,9 @@
                     <a class="btn btn-primary" href="{{ route('average.create') }}">@lang('buttons.createPrices')</a>
                 </div>
                 <div class="col-sm-6">
-                    <a class="btn btn-primary" href="{{ route('users.index') }}">@lang('buttons.users')</a>
+                    <a class="btn btn-primary" href="{{ route('contact.create') }}">@lang('buttons.contactForm')</a>
                 </div>
             </div>
-
-            <p id="demo"></p>
 
             <div class="row mt-4">
                 <table class="table table-hover">
@@ -55,16 +53,6 @@
             </div>
         </div>
   </div>
-  <script>
-        function Car(name,year){
-            this.name = name;
-            this.year = year;
-        }
 
-      let car1 = new Car('ford',2014);
-      let car2 = new Car('Aromeo' ,2012);
-
-      document.getElementById("demo").innerHTML = car1.name + "" +car1.year + " " + car2.name + "" + car2.year;
-    </script>
 
 </x-app-layout>

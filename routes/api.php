@@ -31,5 +31,6 @@ Route::delete('/{id}/delete',          [UserApiController::class, 'destroy']);
 //averages
 Route::get('/averages',                 [AverageApiController::class, 'index']);
 Route::get('/{id}/show',                [AverageApiController::class, 'show']);
+Route::post('/create',                   [AverageApiController::class, 'create']);
 Route::put('/{id}/update',              [AverageApiController::class, 'update']);
 Route::delete('/{id}/delete',           [AverageApiController::class, 'delete']);

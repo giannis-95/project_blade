@@ -92,6 +92,7 @@
             $("#createRowsTable").on('click' , '#removeRows', function(){
                 $(this).closest("tr").remove()
             })
+
         });
     </script>
 
