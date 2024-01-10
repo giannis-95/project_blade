@@ -3,9 +3,7 @@
 namespace App\Http\Controllers\Api;
 
 use App\Models\Average;
-use App\Models\User;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Auth;
 
 class AverageApiController{
 
