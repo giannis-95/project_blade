@@ -4,8 +4,6 @@ namespace App\Http\Controllers\Api;
 
 use App\Models\User;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Hash;
-use Faker\Generator as Faker;
 
 class UserApiController
 {
@@ -24,10 +22,12 @@ class UserApiController
     public function store(Request $request)
     {
         $user = User::create([
-            'name' => app(Faker::class)->name ,
-            'email' => app(Faker::class)->email ,
+            'firstname' => $request->input('firstname') ,
+            'lastname' => $request->input('lastname') ,
+            'phone' => $request->input('phone'),
+            'email' => $request->input('email') ,
             'email_verified_at' => null ,
-            'password' => Hash::make(app(Faker::class)->text) ,
+            'password' => $request->input('password') ,
             'remember_token' => null ,
         ]);
 
@@ -50,7 +50,8 @@ class UserApiController
     {
         $user = User::find($id);
 
-        $user->name = $request->input('name');
+        $user->firstname = $request->input('firstname');
+        $user->lastname = $request->input('lastname');
         $user->email = $request->input('email');
 
         $user->save();
