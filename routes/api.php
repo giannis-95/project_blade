@@ -21,16 +21,16 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 });
 
 //users
-Route::get('/users',                   [UserApiController::class, 'index']);
-Route::get('/{id}/show',               [UserApiController::class, 'show']);
-Route::post('/insert',                 [UserApiController::class, 'store']);
-Route::put('/{id}/update',             [UserApiController::class, 'update']);
-Route::delete('/{id}/delete',          [UserApiController::class, 'destroy']);
+Route::get('/users',                         [UserApiController::class, 'index']);
+Route::get('/users/{id}/show',               [UserApiController::class, 'show']);
+Route::post('/insert',                       [UserApiController::class, 'store']);
+Route::put('/users/{id}/update',             [UserApiController::class, 'update']);
+Route::delete('/users/{id}/delete',          [UserApiController::class, 'destroy']);
 
 
 //averages
-Route::get('/averages',                 [AverageApiController::class, 'index']);
-Route::get('/{id}/show',                [AverageApiController::class, 'show']);
-Route::post('/create',                  [AverageApiController::class, 'create']);
-Route::put('/{id}/update',              [AverageApiController::class, 'update']);
-Route::delete('/{id}/delete',           [AverageApiController::class, 'delete']);
+Route::get('/averages',                          [AverageApiController::class, 'index']);
+Route::get('/averages/{id}/show',                [AverageApiController::class, 'show']);
+Route::post('/create',                           [AverageApiController::class, 'create']);
+Route::put('/averages/{id}/update',              [AverageApiController::class, 'update']);
+Route::delete('/averages/{id}/delete',           [AverageApiController::class, 'delete']);
